@@ -1,0 +1,17 @@
+*
+
+!*/
+
+venv/
+
+__pycache__/
+
+.idea/
+
+!.gitignore
+
+!Dockerfile
+
+!*.txt
+
+!*.py
