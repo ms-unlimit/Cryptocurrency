@@ -28,8 +28,8 @@ if __name__ == "__main__":
 
     # mydataset = custom_dataset_Data_for_UCI_named('Datasets/Data_for_UCI_named.csv')
     mydataset = btcDataset('Datasets/btc.csv')
-    number_of_train=(0.7*len(mydataset)).__int__()
-    number_of_test=(0.2*len(mydataset)).__int__()
+    number_of_train=(0.8*len(mydataset)).__int__()
+    number_of_test=(0.1*len(mydataset)).__int__()
     number_of_valid=(0.1*len(mydataset)).__int__()
 
     train_dataset, valid_dataset, test_dataset = random_split(mydataset, [number_of_train, number_of_valid, number_of_test])

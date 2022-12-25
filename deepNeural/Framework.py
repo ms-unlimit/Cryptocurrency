@@ -39,7 +39,7 @@ class Framework:
                           "lr": self.arg.lr,"number_of_features":self.arg.number_of_features,"number_of_out":self.arg.number_of_out}
             torch.save(checkpoint, "checkpoint.pth")
 
-            if (epoch) % 10 == 0:
+            if (epoch) % 5 == 0:
                 self.validation(my_model, loss_function, loss, epoch)
 
         self.test(my_model)
@@ -58,6 +58,7 @@ class Framework:
 
     def validation(self, my_model, loss_function, loss, epoch):
 
+        my_model = my_model.eval()
         out = my_model(self.mydataset.x[self.valid_dataset.indices, :self.arg.number_of_features])
         _, predicted = torch.max(out.data, 1)
         label_v = self.mydataset.y[self.valid_dataset.indices]
@@ -70,7 +71,7 @@ class Framework:
 
 
     def test(self, my_model):
-
+        my_model = my_model.eval()
         X = self.mydataset.x[self.test_dataset.indices]
         Y = self.mydataset.y[self.test_dataset.indices]
         # calculate out

@@ -15,3 +15,5 @@ __pycache__/
 !*.txt
 
 !*.py
+
+!btc.csv
